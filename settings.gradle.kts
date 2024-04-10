@@ -28,7 +28,7 @@ rootProject.name = "TransactionalStore"
 includeBuild("build-conventions")
 
 include(
-    ":app",
+    ":composeApp",
     ":data:key-value",
     ":data:key-value-in-memory-impl",
     ":domain:storage",

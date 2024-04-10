@@ -20,3 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Transactional Store"
+
+includeBuild("build-conventions")

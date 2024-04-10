@@ -1,0 +1,17 @@
+naming:
+  FunctionNaming:
+    ignoreAnnotated: [ "Composable" ]
+  MatchingDeclarationName:
+    active: false
+complexity:
+  LongMethod:
+    ignoreAnnotated: [ "Composable" ]
+    excludes: [ "**/internal/**" ]
+  LongParameterList:
+    ignoreAnnotated: [ "Composable" ]
+    excludes: [ "**/internal/**" ]
+style:
+  MagicNumber:
+    active: false
+  UnusedPrivateMember:
+    allowedNames: "(md_theme_light_shadow|md_theme_dark_shadow|seed)"

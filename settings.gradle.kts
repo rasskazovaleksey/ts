@@ -11,14 +11,21 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
     }
 }
 
-rootProject.name = "Transactional Store"
+rootProject.name = "TransactionalStore"
 
 includeBuild("build-conventions")
+
+include(
+    ":data:key-value",
+    ":data:key-value-in-memory-impl",
+)

@@ -18,7 +18,7 @@ subprojects {
 fun setupJavaTarget(project: Project) {
     project.tasks.withType<KotlinCompile> {
         kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_11.toString()
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
         }
     }
     project.tasks.withType<JavaCompile>().configureEach {

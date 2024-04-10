@@ -28,4 +28,5 @@ includeBuild("build-conventions")
 include(
     ":data:key-value",
     ":data:key-value-in-memory-impl",
+    ":domain:storage",
 )

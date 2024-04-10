@@ -77,12 +77,13 @@ Only ones used are:
 - AndroidX - for Android build
 - Kotlin test - for testing
 - Compose - for UI
-  I was cutoff from JVM libraries, so I've wrote my own implementations. Did it for
-  [CuncurrectHashMap](src/commonMain/kotlin/com/transactionalkeyvaluestore/ConcurrentHashMap.kt) but
-  It was too much for me, too much time consumed.
-  [TransactionalKeyValueStore.transactions](src/commonMain/kotlin/com/transactionalkeyvaluestore/TransactionalKeyValueStore.kt)
-  should be an Queue. Concurrent queue. But I've implemented it as a list. This lead for sync on
-  storage. Its defiantly not a good solution. But it's a solution.
+
+I was cutoff from JVM libraries, so I've wrote my own implementations. Did it for
+[CuncurrectHashMap](data/key-value-in-memory-impl/src/commonMain/kotlin/com/github/rasskazovalexey/data/keyvalue/ConcurrentMap.kt)
+but It was too much for me, too much time consumed.
+[TransactionalKeyValueStore.transactions](data/key-value-in-memory-impl/src/commonMain/kotlin/com/github/rasskazovalexey/data/keyvalue/TransactionalKeyValueStore.kt#L7)
+should be an Queue. Concurrent queue. But I've implemented it as a list. This lead for sync on
+storage. Its defiantly not a good solution. But it's a solution.
 
 ### project structure
 

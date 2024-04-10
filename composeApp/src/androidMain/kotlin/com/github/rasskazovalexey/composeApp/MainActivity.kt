@@ -1,4 +1,4 @@
-package com.github.rasskazovalexey.app
+package com.github.rasskazovalexey.composeApp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

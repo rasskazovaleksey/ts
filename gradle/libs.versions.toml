@@ -1,5 +1,5 @@
 [versions]
-kotlin = "1.9.23"
+kotlin = "1.9.22"
 
 [libraries]
 # Plugins as dependencies for build-conventions
@@ -13,4 +13,5 @@ kotlinx-coroutines-test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.1-B
 androidx-activity-compose = "androidx.activity:activity-compose:1.8.2"
 
 [plugins]
-jetbrains-compose = "org.jetbrains.compose:1.6.1"
+# Be caution: YarnLock bug with 1.6.2 version and kotlin 1.9.23
+jetbrains-compose = "org.jetbrains.compose:1.6.0"

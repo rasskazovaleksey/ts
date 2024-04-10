@@ -1,5 +1,6 @@
 package com.github.rasskazovalexey.designsystem.theme
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -66,7 +67,7 @@ fun StoreScreen(
     onCommitClicked: () -> Unit,
     onRollbackClicked: () -> Unit,
 ) {
-    Column {
+    Column(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
         ControlSection(
             modifier = Modifier.wrapContentSize(),
             key = state.key,

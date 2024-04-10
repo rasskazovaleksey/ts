@@ -4,7 +4,7 @@ local.properties
 /.idea/*
 !.idea/vcs.xml
 !.idea/codeStyles/
-/build
+**/build
 /testResults
 /captures
 .externalNativeBuild

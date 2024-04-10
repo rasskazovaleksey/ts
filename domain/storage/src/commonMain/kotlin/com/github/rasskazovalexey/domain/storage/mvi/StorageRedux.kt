@@ -6,7 +6,6 @@ class StorageRedux {
         val value: String,
         val log: List<LogEntry>,
     ) {
-
         data class LogEntry(
             val message: String,
             val level: Message.OnAppendLog.LogLevel,
@@ -23,10 +22,10 @@ class StorageRedux {
     }
 
     sealed class Message {
-
         data class OnKeyChanged(val key: String) : Message()
 
         data class OnValueChanged(val value: String) : Message()
+
         data object OnGetValue : Message()
 
         data object OnSetValue : Message()

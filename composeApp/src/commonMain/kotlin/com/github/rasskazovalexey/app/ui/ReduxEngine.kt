@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+@Suppress("FunctionName")
 fun <S, M, E> LaunchReduxEngine(
     scope: CoroutineScope,
     initial: Return<S, E>,
@@ -23,6 +24,7 @@ fun <S, M, E> LaunchReduxEngine(
             effectHandler.handle(it)?.let { messages.trySend(it) }
         }
     }
+    @Suppress("TooGenericExceptionCaught", "SwallowedException")
     scope.launch {
         for (msg in messages) {
             try {
@@ -31,7 +33,7 @@ fun <S, M, E> LaunchReduxEngine(
                 states.value = state
                 effects.forEach { effectHandler.handle(it)?.let { messages.trySend(it) } }
             } catch (e: Throwable) {
-                Unit
+                Unit // Note skip error for simplicity
             }
         }
     }

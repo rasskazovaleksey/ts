@@ -46,11 +46,12 @@ data class StoreScreenUiState(
     }
 
     companion object {
-        val default = StoreScreenUiState(
-            key = "",
-            value = "",
-            log = emptyList(),
-        )
+        val default =
+            StoreScreenUiState(
+                key = "",
+                value = "",
+                log = emptyList(),
+            )
     }
 }
 

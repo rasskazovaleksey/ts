@@ -16,25 +16,26 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class StoreScreenModel(
-    handler: StorageEffectHandler = StorageEffectHandler(
-        keyValueStore = TransactionalKeyValueStoreComponent.createKeyValueStore(),
-        transactionalStore = TransactionalKeyValueStoreComponent.createTransactionalStore(),
-    ),
+    handler: StorageEffectHandler =
+        StorageEffectHandler(
+            keyValueStore = TransactionalKeyValueStoreComponent.createKeyValueStore(),
+            transactionalStore = TransactionalKeyValueStoreComponent.createTransactionalStore(),
+        ),
     reducer: StorageReducer = StorageReducer(),
     converter: StorageStateConverter = StorageStateConverter(),
 ) {
-
     private val scope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
     private val mutableState: MutableStateFlow<StoreScreenUiState> = MutableStateFlow(StoreScreenUiState.default)
     val state: StateFlow<StoreScreenUiState> = mutableState.asStateFlow()
 
-    private val engine = LaunchReduxEngine(
-        initial = StorageRedux.State.default.pure(),
-        reducer = reducer,
-        effectHandler = handler,
-        scope = scope,
-    )
+    private val engine =
+        LaunchReduxEngine(
+            initial = StorageRedux.State.default.pure(),
+            reducer = reducer,
+            effectHandler = handler,
+            scope = scope,
+        )
 
     init {
         scope.launch {

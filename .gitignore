@@ -1,0 +1,14 @@
+*.iml
+.gradle/
+local.properties
+/.idea/*
+!.idea/vcs.xml
+!.idea/codeStyles/
+/build
+/testResults
+/captures
+.externalNativeBuild
+/kotlin-js-store
+
+#OSX
+.DS_Store

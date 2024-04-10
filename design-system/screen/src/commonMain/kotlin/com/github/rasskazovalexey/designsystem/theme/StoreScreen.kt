@@ -43,6 +43,14 @@ data class StoreScreenUiState(
             ERROR,
         }
     }
+
+    companion object {
+        val default = StoreScreenUiState(
+            key = "",
+            value = "",
+            log = emptyList(),
+        )
+    }
 }
 
 @Composable

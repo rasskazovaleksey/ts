@@ -22,7 +22,12 @@ class StorageReducer : ComplexReducer<State, Message, Effect> {
             Message.OnDeleteValue -> state.withEffect(Effect.DeleteValue(state.key))
             Message.OnGetValue -> state.withEffects(Effect.GetValue(state.key))
             Message.OnSetValue -> state.withEffects(Effect.SetValue(state.key, state.value))
-            is Message.OnAppendLog -> state.copy(log = state.log + msg.log).pure()
+            is Message.OnAppendLog -> state.copy(
+                log = listOf(State.LogEntry(message = msg.log, level = msg.level)) + state.log,
+            ).pure()
+
+            is Message.OnKeyChanged -> state.copy(key = msg.key).pure()
+            is Message.OnValueChanged -> state.copy(value = msg.value).pure()
         }
     }
 }

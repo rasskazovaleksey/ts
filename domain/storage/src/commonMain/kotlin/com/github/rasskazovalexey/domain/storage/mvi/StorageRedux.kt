@@ -4,8 +4,14 @@ class StorageRedux {
     data class State(
         val key: String,
         val value: String,
-        val log: List<String>,
+        val log: List<LogEntry>,
     ) {
+
+        data class LogEntry(
+            val message: String,
+            val level: Message.OnAppendLog.LogLevel,
+        )
+
         companion object {
             val default =
                 State(
@@ -17,6 +23,10 @@ class StorageRedux {
     }
 
     sealed class Message {
+
+        data class OnKeyChanged(val key: String) : Message()
+
+        data class OnValueChanged(val value: String) : Message()
         data object OnGetValue : Message()
 
         data object OnSetValue : Message()

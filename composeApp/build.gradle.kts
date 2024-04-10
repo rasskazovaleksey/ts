@@ -16,6 +16,10 @@ dependencies {
     commonMainImplementation(project(":domain:storage"))
     commonMainImplementation(project(":data:key-value"))
     commonMainImplementation(project(":data:key-value-in-memory-impl"))
+
+    @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
+    commonTestImplementation(compose.uiTest)
+    commonTestImplementation(kotlin("test"))
 }
 
 compose.desktop {
